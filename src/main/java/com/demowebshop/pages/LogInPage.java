@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
+import java.util.List;
+
 public class LogInPage extends ObjectUtility {
     WebDriver driver;
     /** Page constructor**/
@@ -39,5 +42,15 @@ public class LogInPage extends ObjectUtility {
     public MyAccountPage clickOnLoginButton(){
         page.clickOnElement(loginbutton);
         return new MyAccountPage(driver);
+    }
+
+    public List<String> getExcelData() throws IOException {
+        List<String> data = excel.readDataFromExcel("\\src\\main\\resources\\TestData.xlsx", "LoginPage");
+        return data;
+    }
+
+    public String getLoginPageTitle(){
+        String logintitle=page.getPageTitle(driver);
+        return logintitle;
     }
 }
