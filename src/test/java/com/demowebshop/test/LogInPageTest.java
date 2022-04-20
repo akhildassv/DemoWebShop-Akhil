@@ -22,6 +22,7 @@ public class LogInPageTest extends Base {
         String actual_mailId=account.getUserName();
         String expected_mailId="akhildas710@gmail.com";
         Assert.assertEquals(actual_mailId,expected_mailId,"LogIn Failed");
+        //Assert.assertEquals(actual_mailId,expected_mailId,"LogIn Failed");
 
     }
 
