@@ -30,6 +30,8 @@ public class LogInPage extends ObjectUtility {
     private final String _loginbutton="div>input[type='submit'";
     @FindBy(css=_loginbutton) WebElement loginbutton;
 
+
+
     /** User Actions **/
     public void enterUserName(String uName){
         page.enterText(username,uName);
@@ -44,13 +46,9 @@ public class LogInPage extends ObjectUtility {
         return new MyAccountPage(driver);
     }
 
-    public List<String> getExcelData() throws IOException {
-        List<String> data = excel.readDataFromExcel("\\src\\main\\resources\\TestData.xlsx", "LoginPage");
-        return data;
-    }
-
     public String getLoginPageTitle(){
         String logintitle=page.getPageTitle(driver);
         return logintitle;
     }
+
 }

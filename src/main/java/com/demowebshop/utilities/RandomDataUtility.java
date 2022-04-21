@@ -6,7 +6,7 @@ public class RandomDataUtility {
     public String getRandomMail() {
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(1000);
-        String email2 = "username" + randomInt + "@gmail.com";
+        String email2 = "usernames" + randomInt + "@gmail.com";
         return email2;
     }
 

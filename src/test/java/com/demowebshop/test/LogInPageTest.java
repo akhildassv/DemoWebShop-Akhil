@@ -15,26 +15,13 @@ public class LogInPageTest extends Base {
     HomePage home;
     LogInPage login;
     MyAccountPage account;
-    ExcelUtility excel;
-    public String actualTitle;
+    ExcelUtility excel=new ExcelUtility();
+
     @Test(priority = 2,enabled = true,description = "TC_001_Verify valid User Login")
-    public void verifyLogin(){
+    public void verifyLogin() throws IOException {
         home=new HomePage(driver);
         login=home.clickOnLoginMenu();
-        login.enterUserName("akhildas710@gmail.com");
-        login.enterPassword("akhildas");
-        account=login.clickOnLoginButton();
-        String actual_mailId=account.getUserName();
-        String expected_mailId="akhildas710@gmail.com";
-        Assert.assertEquals(actual_mailId,expected_mailId,"LogIn Failed");
-
-    }
-
-    @Test
-    public void verifyLogin1() throws IOException {
-        home=new HomePage(driver);
-        login=home.clickOnLoginMenu();
-        List<String> datas=login.getExcelData();
+        List<String> datas=excel.readDataFromExcel("\\src\\main\\resources\\TestData.xlsx", "LoginPage");
         login.enterUserName(datas.get(3));
         login.enterPassword(datas.get(4));
         account=login.clickOnLoginButton();
@@ -42,12 +29,14 @@ public class LogInPageTest extends Base {
         String expected_mailId=datas.get(3);
         Assert.assertEquals(actual_mailId,expected_mailId,"LogIn Failed");
     }
-    @Test
-    public void verifyLoginPageTitle() {
+    @Test(priority = 3,enabled = true,description = "TC_001_Verify Login Page Title")
+    public void verifyLoginPageTitle() throws IOException {
         home=new HomePage(driver);
         login=home.clickOnLoginMenu();
-        String expectedTitle = "Demo Web Shop. Login";
+        List<String> datas=excel.readDataFromExcel("\\src\\main\\resources\\TestData.xlsx", "LoginPage");
+        String expectedTitle =datas.get(5);
         String actualTitle =login.getLoginPageTitle();
         Assert.assertEquals(actualTitle,expectedTitle,"Page title not equal");
     }
+
 }

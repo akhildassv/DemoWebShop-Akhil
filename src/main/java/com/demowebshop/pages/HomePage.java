@@ -18,6 +18,9 @@ public class HomePage extends ObjectUtility {
     private final String _loginMenu="li>a[class='ico-login'";
     @FindBy(css=_loginMenu) WebElement loginMenu;
 
+    private final String _registermenu="li>a[class='ico-register']";
+    @FindBy(css=_registermenu) WebElement registermenu;
+
     /**User Actions Methods**/
 
     public String getHomePageTitle(){
@@ -29,5 +32,8 @@ public class HomePage extends ObjectUtility {
         page.clickOnElement(loginMenu);
         return new LogInPage(driver);
     }
-
+    public RegisterPage clickOnRegisterButton(){
+        page.clickOnElement(registermenu);
+        return new RegisterPage(driver);
+    }
 }
