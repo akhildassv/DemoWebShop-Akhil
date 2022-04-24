@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Test Suite">
+    <test name="mytestng Regression">
+        <classes>
+            <class name="com.demowebshop.test.HomePageTest">
+                <methods>
+                    <include name="verifyHomePageTitle"/>
+                </methods>
+            </class>
+            <class name="com.demowebshop.test.LogInPageTest">
+                <methods>
+                    <include name="verifyLogin"/>
+                    <include name="verifyLoginPageTitle"/>
+                </methods>
+            </class>
+            <class name="com.demowebshop.test.RegisterPageTest">
+                <methods>
+                    <include name="verifyRegister"/>
+                    <include name="verifyLoginPageTitle"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

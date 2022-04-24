@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 2.906 s <<< FAILURE! - in TestSuite
+com.demowebshop.test.HomePageTest.verifyHomePageTitle  Time elapsed: 0.187 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.demowebshop.test.HomePageTest.verifyHomePageTitle(HomePageTest.java:15)
+
+com.demowebshop.test.LogInPageTest.verifyLogin  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.demowebshop.test.LogInPageTest.verifyLogin(LogInPageTest.java:23)
+
+com.demowebshop.test.LogInPageTest.verifyLoginPageTitle  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.demowebshop.test.LogInPageTest.verifyLoginPageTitle(LogInPageTest.java:35)
+
+com.demowebshop.test.RegisterPageTest.verifyRegister  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.demowebshop.test.RegisterPageTest.verifyRegister(RegisterPageTest.java:25)
+
+com.demowebshop.test.RegisterPageTest.verifyLoginPageTitle  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.demowebshop.test.RegisterPageTest.verifyLoginPageTitle(RegisterPageTest.java:44)
+

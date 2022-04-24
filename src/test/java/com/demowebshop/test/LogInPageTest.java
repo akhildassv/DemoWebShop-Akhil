@@ -17,7 +17,8 @@ public class LogInPageTest extends Base {
     MyAccountPage account;
     ExcelUtility excel=new ExcelUtility();
 
-    @Test(priority = 2,enabled = true,description = "TC_001_Verify valid User Login")
+    //@Test(groups = {"sanity"},priority = 2,enabled = true,description = "TC_001_Verify valid User Login")
+    @Test(groups = {"sanity"})
     public void verifyLogin() throws IOException {
         home=new HomePage(driver);
         login=home.clickOnLoginMenu();
@@ -29,7 +30,8 @@ public class LogInPageTest extends Base {
         String expected_mailId=datas.get(3);
         Assert.assertEquals(actual_mailId,expected_mailId,"LogIn Failed");
     }
-    @Test(priority = 3,enabled = true,description = "TC_001_Verify Login Page Title")
+   // @Test(priority = 3,enabled = true,description = "TC_001_Verify Login Page Title")
+    @Test(groups = {"smoke"})
     public void verifyLoginPageTitle() throws IOException {
         home=new HomePage(driver);
         login=home.clickOnLoginMenu();

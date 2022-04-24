@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Grouping Test Suite">
+    <test name="grouping test">
+        <groups>
+            <run>
+                <include name="sanity"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.demowebshop.test.HomePageTest">
+                <methods>
+                    <include name="verifyHomePageTitle"/>
+                </methods>
+            </class>
+            <class name="com.demowebshop.test.LogInPageTest">
+                <methods>
+                    <include name="verifyLogin"/>
+                    <include name="verifyLoginPageTitle"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

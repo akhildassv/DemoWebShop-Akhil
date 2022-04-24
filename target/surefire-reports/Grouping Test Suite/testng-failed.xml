@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Grouping Test Suite]">
+  <test thread-count="5" verbose="0" name="grouping test(failed)">
+    <groups>
+      <run>
+        <include name="sanity"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.demowebshop.test.LogInPageTest">
+        <methods>
+          <include name="verifyLogin"/>
+          <include name="verifyLoginPageTitle"/>
+        </methods>
+      </class> <!-- com.demowebshop.test.LogInPageTest -->
+      <class name="com.demowebshop.test.RegisterPageTest">
+        <methods>
+          <include name="verifyLoginPageTitle"/>
+          <include name="verifyRegister"/>
+        </methods>
+      </class> <!-- com.demowebshop.test.RegisterPageTest -->
+      <class name="com.demowebshop.test.HomePageTest">
+        <methods>
+          <include name="verifyHomePageTitle"/>
+        </methods>
+      </class> <!-- com.demowebshop.test.HomePageTest -->
+    </classes>
+  </test> <!-- grouping test(failed) -->
+</suite> <!-- Failed suite [Grouping Test Suite] -->

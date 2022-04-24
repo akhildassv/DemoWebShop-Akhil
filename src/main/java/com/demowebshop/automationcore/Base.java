@@ -42,7 +42,7 @@ public class Base {
     }
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
         testInitialize("chrome");
         driver.get("http://demowebshop.tricentis.com/");
